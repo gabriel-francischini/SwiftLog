@@ -1,4 +1,4 @@
-package com.br.ies.core.janela;
+package br.com.ies.core.janela;
 
 import javax.swing.*;
 import java.awt.*;

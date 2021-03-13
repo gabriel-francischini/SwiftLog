@@ -1,4 +1,4 @@
-package com.br.ies.core.inventario;
+package br.com.ies.core.inventario;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

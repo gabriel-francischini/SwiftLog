@@ -1,7 +1,7 @@
-package com.br.ies.core;
+package br.com.ies.core;
 
-import com.br.ies.core.inventario.InventarioPanel;
-import com.br.ies.core.janela.Janela;
+import br.com.ies.core.inventario.InventarioPanel;
+import br.com.ies.core.janela.Janela;
 
 import javax.swing.*;
 

@@ -10,7 +10,7 @@ interface Controller {
     // com.br.ies.MVC.Model.
     // veja: https://stackoverflow.com/questions/182278/is-there-a-way-to-simulate-the-c-friend-concept-in-java
     public static final class Chave { private Chave() {} }
-    private static final Chave chave;
+    public static final Chave chave = new Chave();
 
 
 }

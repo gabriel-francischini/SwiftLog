@@ -6,8 +6,8 @@
 
 
 run:
-	mvn package
-	java -cp target/SwiftLog-1.0-SNAPSHOT.jar br.com.ies.core.Main
+	   mvn package \
+	&& java -cp target/SwiftLog-1.0-SNAPSHOT.jar br.com.ies.core.Main
 
 test:
 	mvn test

@@ -6,13 +6,16 @@
 
 
 run:
+	rm -f sqlite3.db
 	   mvn package \
 	&& java -cp target/SwiftLog-1.0-SNAPSHOT.jar br.com.ies.core.Main
 
 test:
+	rm -f sqlite3.db
 	mvn test
 
 clean:
+	rm -f sqlite3.db
 	mvn clean
 
 

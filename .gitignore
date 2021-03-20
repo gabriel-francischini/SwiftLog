@@ -1,3 +1,8 @@
+# Ignorar o banco de dados, pois não faz parte do código versionável.
+# Em teoria o código deveria criar o banco de dados caso ele não exista.
+sqlite3.db
+
+
 # Copiado do template de gitignore do Java
 # veja: https://raw.githubusercontent.com/github/gitignore/master/Java.gitignore
 

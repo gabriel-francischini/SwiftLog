@@ -14,3 +14,7 @@ test:
 
 clean:
 	mvn clean
+
+
+
+.PHONY: run test clean

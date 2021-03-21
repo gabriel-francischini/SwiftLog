@@ -46,6 +46,7 @@ public class HibernateConfig {
     // Toda tabela tem um nome, se a tabela não tem nome então não podemos deletá-la
     if (nomeTabela.isBlank()) return;
 
+    // Não podemos usar TRUNCATE aqui pois o SQLite3 não suporta truncate, mas o delete faz o mesmo serviço.
     String comandoSQL = String.format("delete from %s", nomeTabela);
     Transaction transaction = getSessão().beginTransaction();
     getSessão().createSQLQuery(comandoSQL).executeUpdate();
@@ -56,9 +57,9 @@ public class HibernateConfig {
     // Busca todas as classes anotadas com javax.persistence.Table
     // veja: https://stackoverflow.com/questions/13128552/how-to-scan-classes-for-annotations/56339680
     Reflections reflections = new Reflections("br.com.ies");
-    Set<Class<?>> annotated = reflections.getTypesAnnotatedWith(Table.class);
+    Set<Class<?>> classesAnotadasComTable = reflections.getTypesAnnotatedWith(Table.class);
 
-    for (Class<?> classe : annotated) {
+    for (Class<?> classe : classesAnotadasComTable) {
       Table entityDoHibernate = classe.getAnnotation(Table.class);
       String nomeDaTabela = entityDoHibernate.name();
       limparTabela(nomeDaTabela);

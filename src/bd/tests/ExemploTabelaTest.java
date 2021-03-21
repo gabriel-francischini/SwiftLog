@@ -5,11 +5,15 @@ import org.junit.Test;
 import br.com.ies.bd.tests.HibernateTestUnit;
 import br.com.ies.bd.HibernateConfig;
 
-public class HibernateTest extends HibernateTestUnit {
+import java.math.BigDecimal;
+
+public class ExemploTabelaTest extends HibernateTestUnit {
 
     @Test
     public void testInsertUser() {
-        br.com.ies.bd.ExemploTabela user = new br.com.ies.bd.ExemploTabela("Robb", "Stark", 17);
+        br.com.ies.bd.ExemploTabela user =
+                new br.com.ies.bd.ExemploTabela("1°", "não-nulo",
+                        300,10, new BigDecimal("59.60"), null);
 
         HibernateConfig.salvar(user);
 

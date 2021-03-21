@@ -24,7 +24,6 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
-  <!--      <scope>test</scope> -->
     </dependency>
 
   <!-- Pra ajudar no padrão observador -->
@@ -50,17 +49,6 @@
       <artifactId>sqlite-jdbc</artifactId>
       <version>3.20.1</version>
       <scope>test</scope>
-    </dependency>
-
-    <!-- Adiciona a capacidade de manipularmos o banco de dados via Hibernate para um estado específico.
-         Isso facilita muito na hora de testar classes/módulos/subsistemas que mexam com o banco de dados,
-         pois isso reseta o estado do banco de dados entre um teste e outro.
-         veja: https://samerabdelkafi.wordpress.com/2010/08/10/dbunit-test-and-pobulate-database-with-dbunit-hibernate-and-spring/
-      -->
-    <dependency>
-      <groupId>org.dbunit</groupId>
-      <artifactId>dbunit</artifactId>
-      <version>2.7.0</version>
     </dependency>
 
     <!-- Para facilitar a análise das anotações. Veja o método limparBD() da classe HibernateConfig.

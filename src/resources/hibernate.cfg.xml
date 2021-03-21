@@ -17,7 +17,7 @@
         <!-- Cria as tabelas no banco de dados -->
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <!-- Todas as classes/tabelas que são persistidas no banco de dados -->
-        <mapping class="User"/>
+        <!-- Todas as classes que são persistidas no banco de dados -->
+        <mapping class="br.com.ies.bd.ExemploTabela"/>
     </session-factory>
 </hibernate-configuration>

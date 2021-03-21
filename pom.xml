@@ -34,7 +34,8 @@
       <version>1.2</version>
     </dependency>
 
-    <!-- Copiado para usar o Sqlite3 com o Hibernate
+    <!-- Adiciona o Hibernate ao projeto, para ser o ORM do projeto e fazer a ponte entre classes e o banco de dados
+         automaticamente para nós.
          veja: https://gist.github.com/gdenn/97bdb4993c1b4af353173a9ceaa3be6c
       -->
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
@@ -50,14 +51,31 @@
       <version>3.20.1</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/com.zsoltfabok/sqlite-dialect -->
-    <!--
+
+    <!-- Adiciona a capacidade de manipularmos o banco de dados via Hibernate para um estado específico.
+         Isso facilita muito na hora de testar classes/módulos/subsistemas que mexam com o banco de dados,
+         pois isso reseta o estado do banco de dados entre um teste e outro.
+         veja: https://samerabdelkafi.wordpress.com/2010/08/10/dbunit-test-and-pobulate-database-with-dbunit-hibernate-and-spring/
+      -->
     <dependency>
-      <groupId>com.zsoltfabok</groupId>
-      <artifactId>sqlite-dialect</artifactId>
-      <version>1.0</version>
+      <groupId>org.dbunit</groupId>
+      <artifactId>dbunit</artifactId>
+      <version>2.7.0</version>
     </dependency>
-    -->
+
+    <!-- Para facilitar a análise das anotações. Veja o método limparBD() da classe HibernateConfig.
+         veja: https://www.baeldung.com/java-custom-annotation
+         veja: https://stackoverflow.com/questions/13128552/how-to-scan-classes-for-annotations/56339680
+      -->
+    <dependency>
+      <groupId>org.reflections</groupId>
+      <artifactId>reflections</artifactId>
+      <version>0.9.12</version>
+    </dependency>
+
+    <!-- Por algum motivo o Hibernate/JDBC/Java não suporta o SQLite3 por default,
+         esse pacote aqui adiciona o dialeto SQLite3 para ser usado pelo hibernate.
+      -->
     <dependency>
       <groupId>com.github.gwenn</groupId>
       <artifactId>sqlite-dialect</artifactId>

@@ -3,15 +3,17 @@
 # Isso aqui são   4 espaços:    |
 # Isso aqui é     1     tab:	|
 
-
+# Linhas que começam com um - (híphen) são linhas que podem falhar
+# sem fazer a build inteira falhar.
+# veja: https://stackoverflow.com/questions/2670130/make-how-to-continue-after-a-command-fails
 
 run:
-	rm -f sqlite3.db
+	-rm -f sqlite3.db
 	   mvn package \
 	&& java -cp target/SwiftLog-1.0-SNAPSHOT.jar br.com.ies.core.Main
 
 test:
-	rm -f sqlite3.db
+	-rm -f sqlite3.db
 	mvn test
 
 clean:

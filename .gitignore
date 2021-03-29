@@ -2,6 +2,13 @@
 # Em teoria o código deveria criar o banco de dados caso ele não exista.
 sqlite3.db
 
+# Ignora a documentação, pois ela faz parte do nosso processo de build. Ela é
+# gerada a partir de outros arquivos (tal como um binário que é o resultado de
+# compilar um código-fonte), então a gente adiciona no Git os arquivos e os
+# comandos que criam a documentação, mas não a documentação em si.
+build_docs/doxygen
+build_docs/sphinx
+
 
 # Copiado do template de gitignore do Java
 # veja: https://raw.githubusercontent.com/github/gitignore/master/Java.gitignore

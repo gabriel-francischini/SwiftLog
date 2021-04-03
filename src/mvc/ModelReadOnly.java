@@ -1,8 +1,8 @@
 package br.com.ies.MVC;
 
-import br.com.ies.MVC.Model;  
+import br.com.ies.MVC.Model;
 
-interface ModelReadOnly {
+public interface ModelReadOnly {
 
     // Métodos get...
     // void get();

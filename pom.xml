@@ -48,7 +48,7 @@
       <groupId>org.xerial</groupId>
       <artifactId>sqlite-jdbc</artifactId>
       <version>3.20.1</version>
-      <scope>test</scope>
+      <!-- <scope>test</scope> -->
     </dependency>
 
     <!-- Para facilitar a análise das anotações. Veja o método limparBD() da classe HibernateConfig.

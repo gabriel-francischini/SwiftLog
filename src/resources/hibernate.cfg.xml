@@ -19,5 +19,9 @@
 
         <!-- Todas as classes que são persistidas no banco de dados -->
         <mapping class="br.com.ies.bd.ExemploTabela"/>
+        <mapping class="br.com.ies.bd.Colaborador"/>
+        <mapping class="br.com.ies.bd.Contato"/>
+        <mapping class="br.com.ies.bd.Fornecedor"/>
+        <mapping class="br.com.ies.bd.Mercadoria"/>
     </session-factory>
 </hibernate-configuration>

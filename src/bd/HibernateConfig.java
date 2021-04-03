@@ -28,12 +28,17 @@ public class HibernateConfig {
     }
   }
 
+  /** Essa aqui é a session factory.
+   *  \param Inteiro é um inteiro entre 10 e 100
+   */
   public static SessionFactory getSessionFactory() {
     return sessionFactory;
   }
+
   public static Session getSessão() {
     return sessionFactory.getCurrentSession();
   }
+  
   public static int salvar(Object obj) {
     Transaction transaction = getSessão().beginTransaction();
     int id = (Integer) getSessão().save(obj);

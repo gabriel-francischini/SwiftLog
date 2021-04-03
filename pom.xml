@@ -89,6 +89,13 @@
       <artifactId>jaxb-core</artifactId>
       <version>2.3.0</version>
     </dependency>
+
+    <!-- Adiciona um look and feel baseado no Darcula/IntelliJ para os componentes GUI do Swing -->
+    <dependency>
+      <groupId>com.formdev</groupId>
+      <artifactId>flatlaf</artifactId>
+      <version>1.1</version>
+    </dependency>
   </dependencies>
 
 

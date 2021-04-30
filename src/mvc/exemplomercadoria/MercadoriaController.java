@@ -25,12 +25,30 @@ class MercadoriaController extends Controller {
         this(view, mercadoria.getModel(Controller.chave));
     }
 
-    public void salvarAlterações(MercadoriaModelReadOnly mercadoria){
+    public void salvarAlterações(MercadoriaModelReadOnly mercadoriaReadOnly){
         System.out.println("Salvando MercadoriaModelReadOnly no banco de dados via MercadoriaController");
-        br.com.ies.bd.HibernateConfig.salvar(mercadoria.getModel(Controller.chave).getMercadoria(Controller.chave));
+
+        /* Toma cuidado pois assim que setarmos um atributo do Model, o FormularioMercadoriaView
+        * vai apagar os dados que ele está mostrado para colocar os dados novos que estão no MercadoriaModel.
+        * Isso quer dizer que se o usuário digitou vários campos, ao setarmos o primeiro campo a gente perde
+        * os dados que o usuário digitou pois o FormularioMercadoriaView apagou eles para
+        * colocar os dados do MercadoriaModel. A solução é salvar esses dados numa variável temporária primeiro, ou
+        * ter um método que altera mais de um campo ao mesmo tempo. */
+        var novoNome = view.getNomeInput();
+        var novaMarca = view.getMarcaInput();
+        var novaDescrição = view.getDescriçãoInput();
+        var novoTamanho = view.getTamanhoInput();
+
+        MercadoriaModel mercadoria = mercadoriaReadOnly.getModel(Controller.chave);
+        mercadoria.setNome(Controller.chave, novoNome);
+        mercadoria.setMarca(Controller.chave, novaMarca);
+        mercadoria.setDescrição(Controller.chave, novaDescrição);
+        mercadoria.setTamanho(Controller.chave, novoTamanho);
+
+        br.com.ies.bd.HibernateConfig.salvar(mercadoriaReadOnly.getModel(Controller.chave).getMercadoria(Controller.chave));
         // Ao salvar, pode ser que uma ID seja adicionada a um item que não fosse pré-existente,
         // logo, devemos avisar os componentes interessados que os valores dessa mercadoria podem ter mudado.
-        mercadoria.getModel(Controller.chave).notificarMudouValores();
+        mercadoriaReadOnly.getModel(Controller.chave).notificarMudouValores();
     }
 
     MercadoriaController(MercadoriaModel mercadoria){

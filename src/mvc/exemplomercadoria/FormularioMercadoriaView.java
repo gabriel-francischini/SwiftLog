@@ -3,7 +3,11 @@ package br.com.ies.MVC.ExemploMercadoria;
 import mvc.exemplomercadoria.MercadoriaForm;
 import br.com.ies.MVC.ExemploMercadoria.MercadoriaModelReadOnly;
 import br.com.ies.MVC.ExemploMercadoria.MercadoriaController;
-import javax.swing.JFrame;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -46,20 +50,10 @@ class FormularioMercadoriaView {
         });
 
         System.out.println("Adicionando listener da FormularioMercadoriaView a um botão Swing");
-        System.out.println(mercadoriaForm.confirmarButton.getActionCommand() + " " + mercadoriaForm.confirmarButton.toString());
 
-        var listener = new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("FormularioMercadoriaView ouviu o evento Swing de botão: " + e.getActionCommand());
-                if(!e.getActionCommand().isEmpty()){
-                    controller.salvarAlterações(mercadoria);
-                }
-            }};
         mercadoriaForm.confirmarButton.addActionListener((ActionEvent e) -> {
             System.out.println("FormularioMercadoriaView ouviu o evento Swing de botão: " + e.getActionCommand());
-            if(!e.getActionCommand().isEmpty()){
-                controller.salvarAlterações(mercadoria);
-            }
+            controller.salvarAlterações(mercadoria);
         });
     }
 
@@ -76,4 +70,25 @@ class FormularioMercadoriaView {
         this.mercadoriaForm = new MercadoriaForm();
         this.continuarConstrutor();
     }
+
+    public String getNomeInput() {
+        return mercadoriaForm.nomeInput.getText();
+    }
+
+    public String getTamanhoInput() {
+        return mercadoriaForm.tamanhoInput.getText();
+    }
+
+    public String getMarcaInput() {
+        return mercadoriaForm.marcaInput.getText();
+    }
+
+    public String getDescriçãoInput() {
+        return mercadoriaForm.descriçãoInput.getText();
+    }
+
+    public String getIdentificaçãoInput() {
+        return mercadoriaForm.identificaçãoInput.getText();
+    }
+
 }

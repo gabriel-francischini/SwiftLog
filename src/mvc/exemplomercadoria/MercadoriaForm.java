@@ -38,10 +38,6 @@ public class MercadoriaForm {
     //! esse código nunca seria executado.
     public void createUIComponents() {
         // TODO: place custom component creation code here
-        confirmarButton = new JButton();
-        confirmarButton.addActionListener(e -> {
-            System.out.println("Botão clicado");
-        });
     }
 
     //* Esse abaixo é o construtor da classe.

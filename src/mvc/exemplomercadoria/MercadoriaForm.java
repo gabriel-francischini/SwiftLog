@@ -18,7 +18,10 @@ public class MercadoriaForm {
     public JPanel raiz;
 
     /**
-     * Esse método de classe cria a view inteira sozinha e stand-alone, caso você precise
+     * Esse método de classe cria a view inteira sozinha e stand-alone, caso você precise.
+     * Nesse exemplos não precisamos disso pois o FormularioMercadoriaView já tem uma função que faz isso,
+     * mas esse aqui é um bom template para copiar e colar caso você precise escrever o código de criar janelas
+     * em algum outro lugar.
      */
     public static void main(String[] args) {
         JFrame frame = new JFrame("MercadoriaForm");

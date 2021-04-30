@@ -14,6 +14,7 @@ class FormularioMercadoriaView {
     MercadoriaForm mercadoriaForm;
     JFrame janela;
 
+    /** Método importante pra facilitar a vida de outras classes */
     void mostrarJanela(){
         janela.setTitle("Mercadoria");
         janela.setContentPane(mercadoriaForm.raiz);
@@ -22,6 +23,7 @@ class FormularioMercadoriaView {
         janela.setVisible(true);
     }
 
+    /** Método importante pra facilitar a vida de outras classes */
     public void setarConformeModel(MercadoriaModelReadOnly mercadoria){
         this.mercadoria = mercadoria;
         mercadoriaForm.nomeInput.setText(mercadoria.getNome());
@@ -31,6 +33,8 @@ class FormularioMercadoriaView {
         mercadoriaForm.descriçãoInput.setText(mercadoria.getDescrição());
     }
 
+    /** Inicializa os campos da interface que não são pré-fixados e coloca as callbacks de quando usário interage
+     * com a interface. */
     private void continuarConstrutor(){
         System.out.println("Continuando a contrução de uma FormularioMercadoriaView");
         janela = new JFrame();

@@ -9,6 +9,7 @@ import br.com.ies.MVC.ExemploMercadoria.MercadoriaModel;
 class MercadoriaModelReadOnly {
     private MercadoriaModel mercadoria;
 
+    /** "Converte" de MercadoriaModel para MercadoriaModelReadOnly */
     MercadoriaModelReadOnly(MercadoriaModel mercadoria){
         System.out.println("Criando MercadoriaModelReadOnly(MercadoriaModel)");
         this.mercadoria = mercadoria;
@@ -17,6 +18,8 @@ class MercadoriaModelReadOnly {
         mercadoria.quandoMudarValores(callback);
     }
 
+    /** Método importante para facilitar a vida de outros objetos/classes.
+     * Converte de MercadoriaModelReadOnly para MercadoriaModel */
     public MercadoriaModel getModel(Controller.Chave _chave){ return mercadoria; }
 
     /* Getters */

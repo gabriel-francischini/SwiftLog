@@ -1,6 +1,6 @@
-package br.com.ies.MVC;
-import br.com.ies.MVC.ModelReadOnly;
-import br.com.ies.MVC.Controller;
+package mvc;
+import mvc.ModelReadOnly;
+import mvc.Controller;
 
 public class Model implements ModelReadOnly {
 

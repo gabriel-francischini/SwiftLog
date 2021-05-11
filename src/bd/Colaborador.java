@@ -1,4 +1,4 @@
-package br.com.ies.bd;
+package bd;
 
 import javax.persistence.Entity;
 

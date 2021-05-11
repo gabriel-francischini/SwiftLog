@@ -1,4 +1,4 @@
-package br.com.ies.bd;
+package bd;
 
 // @Entity marca uma classe que deve corresponder a uma tabela do banco de dados.
 // Não se esqueça de adicionar cada @Entity no arquivo src/resources/hibernate.cfg.xml .
@@ -21,7 +21,7 @@ import java.math.BigDecimal;
 
 
 // Não se esqueça de adicionar cada @Entity no arquivo src/resources/hibernate.cfg.xml .
-// Essa classe vai aparecer como br.com.ies.bd.ExemploTabela nesse arquivo por conta do package declarado na linha 1.
+// Essa classe vai aparecer como bd.ExemploTabela nesse arquivo por conta do package declarado na linha 1.
 @Entity
 
 // Por default, o nome da tabela seria igual o nome da classe. Mas é bom substituir o nome no BD pelo nome que consta

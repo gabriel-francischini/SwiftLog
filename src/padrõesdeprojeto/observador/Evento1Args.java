@@ -1,22 +1,22 @@
-package br.com.ies.padrõesdeprojeto;
+package padrõesdeprojeto.observador;
 import java.util.*;
 
-import br.com.ies.padrõesdeprojeto.Observador1;
+import padrõesdeprojeto.observador.Observador1;
 
-public class Observável1<ArgType> {
-    private ArrayList<Observador1<ArgType>> callbacks;
+public class Evento1Args<ArgType> {
+    private final ArrayList<Observador1<ArgType>> callbacks;
 
     public void registrar(Observador1<ArgType> código){
         callbacks.add(código);
     }
 
-    public void notificar(ArgType argumento){
+    public void broadcast(ArgType argumento){
         for (Observador1<ArgType> função : callbacks) {
             função.notificar(argumento);
         }
     }
 
-    public Observável1() {
+    public Evento1Args() {
         this.callbacks = new ArrayList<Observador1<ArgType>>();
 
     }

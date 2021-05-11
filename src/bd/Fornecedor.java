@@ -1,4 +1,4 @@
-package br.com.ies.bd;
+package bd;
 
 import javax.persistence.Entity;
 
@@ -23,4 +23,13 @@ class Fornecedor {
 
     @Column public int CPF;
     @Column public int CEP;
+
+    public Fornecedor() {
+    }
+
+    public Fornecedor(String nome, int CPF, int CEP) {
+        this.nome = nome;
+        this.CPF = CPF;
+        this.CEP = CEP;
+    }
 }

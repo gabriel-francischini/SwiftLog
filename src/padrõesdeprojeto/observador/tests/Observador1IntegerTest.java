@@ -1,15 +1,14 @@
-package br.com.ies.padrõesdeprojeto;
+package padrõesdeprojeto.observador.tests;
 
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
-
-import br.com.ies.padrõesdeprojeto.Observável1;
-import br.com.ies.padrõesdeprojeto.Observador1;
+import padrõesdeprojeto.observador.Evento1Args;
+import padrõesdeprojeto.observador.Observador1;
 
 public class Observador1IntegerTest
 {
     public Integer variávelAfetada;
-    Observável1<Integer> meuEvento;
+    Evento1Args<Integer> meuEvento;
 
 
     public Observador1IntegerTest() {
@@ -22,14 +21,14 @@ public class Observador1IntegerTest
     public void shouldAnswerWithTrue()
     {
         variávelAfetada = 0;
-        meuEvento = new Observável1<Integer>();
+        meuEvento = new Evento1Args<Integer>();
 
         Observador1<Integer> minha_função = (Integer x) -> {
             this.variávelAfetada = x * 2;
         };
 
         meuEvento.registrar(minha_função);
-        meuEvento.notificar(10);
+        meuEvento.broadcast(10);
 
         assertTrue(variávelAfetada == 20);
 

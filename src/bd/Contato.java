@@ -1,4 +1,4 @@
-package br.com.ies.bd;
+package bd;
 
 import javax.persistence.Entity;
 
@@ -18,4 +18,11 @@ class Contato {
 
     @Column(name="telefone")
     public int telefone;
+
+    public Contato() {
+    }
+
+    public Contato(int telefone) {
+        this.telefone = telefone;
+    }
 }

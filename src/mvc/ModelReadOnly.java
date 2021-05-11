@@ -1,6 +1,6 @@
-package br.com.ies.MVC;
+package mvc;
 
-import br.com.ies.MVC.Model;
+import mvc.Model;
 
 public interface ModelReadOnly {
 

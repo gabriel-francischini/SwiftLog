@@ -1,38 +1,12 @@
-package br.com.ies.core;
-
-import br.com.ies.core.inventario.InventarioPanel;
-import br.com.ies.core.janela.Janela;
-
-import javax.swing.*;
-
-    public class Main {
+package core;
+import core.interfacesgraficas.listagemmercadorias.*;
+import core.models.ItemEstocadoModel;
 
 
-        private Janela janela;
-        private JTabbedPane jTabbedPane;
-
-        private InventarioPanel inventarioPanel;
-
-    public Main() {
-        this.janela = new Janela(600, 500);
-        this.jTabbedPane = new JTabbedPane();
-        this.inventarioPanel = new InventarioPanel();
-
-
-        this.jTabbedPane.add(this.inventarioPanel, "Inventario");
-        this.jTabbedPane.add(new JPanel(), "Relatorios");
-        this.jTabbedPane.add(new JPanel(), "Opção 3");
-        this.jTabbedPane.add(new JPanel(), "Opção 4");
-
-
-        this.janela.add(this.jTabbedPane);
-        this.janela.pack();
-        this.janela.setVisible(true);
-    }
-
-
+public class Main {
 
     public static void main(String[] args) {
-        new Main();
+        var controller = new ListagemItemEstocadoController(ItemEstocadoModel.findAll());
+        controller.view.mostrarJanela();
     }
 }

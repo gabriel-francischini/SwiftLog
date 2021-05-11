@@ -1,24 +1,16 @@
-package br.com.ies.MVC.ExemploMercadoria;
-import br.com.ies.MVC.ModelReadOnly;
-import br.com.ies.MVC.Controller;
+package mvc.exemplomercadoria;
+import mvc.Controller;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-import br.com.ies.padrõesdeprojeto.Observador0;
-import br.com.ies.padrõesdeprojeto.Observável0;
-
-import br.com.ies.bd.Mercadoria;
+import bd.Mercadoria;
 
 class MercadoriaModel {
     private Mercadoria mercadoria;
-    private Observável0 eventoValoresMudaram;
+    private padrõesdeprojeto.observador.Evento0Args eventoValoresMudaram;
 
-    void quandoMudarValores(Observador0 callback){
-        eventoValoresMudaram.registrar(callback);
+    void quandoMudarValores(padrõesdeprojeto.observador.Listener0Args callback){
+        eventoValoresMudaram.addListener(callback);
     }
-    void notificarMudouValores(){ eventoValoresMudaram.notificar(); }
+    void notificarMudouValores(){ eventoValoresMudaram.broadcast(); }
 
     MercadoriaModel() {
         // chama MercadoriaModel(Mercadoria mercadoria)
@@ -27,7 +19,7 @@ class MercadoriaModel {
     MercadoriaModel(Mercadoria mercadoria) {
         System.out.println("Criando MercadoriaModel(Mercadoria)");
         this.mercadoria = mercadoria;
-        this.eventoValoresMudaram = new Observável0();
+        this.eventoValoresMudaram = new padrõesdeprojeto.observador.Evento0Args();
     }
 
     public Mercadoria getMercadoria(Controller.Chave _chave){
@@ -43,26 +35,26 @@ class MercadoriaModel {
 
     public void setId(Controller.Chave _chave, int id) {
         this.mercadoria.id = id;
-        eventoValoresMudaram.notificar();
+        eventoValoresMudaram.broadcast();
     }
 
     public void setNome(Controller.Chave _chave, String nome) {
         this.mercadoria.nome = nome;
-        eventoValoresMudaram.notificar();
+        eventoValoresMudaram.broadcast();
     }
 
     public void setTamanho(Controller.Chave _chave, String tamanho) {
         this.mercadoria.tamanho = tamanho;
-        eventoValoresMudaram.notificar();
+        eventoValoresMudaram.broadcast();
     }
 
     public void setMarca(Controller.Chave _chave, String marca) {
         this.mercadoria.marca = marca;
-        eventoValoresMudaram.notificar();
+        eventoValoresMudaram.broadcast();
     }
 
     public void setDescrição(Controller.Chave _chave, String descrição) {
         this.mercadoria.descrição = descrição;
-        eventoValoresMudaram.notificar();
+        eventoValoresMudaram.broadcast();
     }
 }

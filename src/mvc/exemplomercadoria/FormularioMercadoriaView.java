@@ -1,8 +1,8 @@
-package br.com.ies.MVC.ExemploMercadoria;
+package mvc.exemplomercadoria;
 
 import mvc.exemplomercadoria.MercadoriaForm;
-import br.com.ies.MVC.ExemploMercadoria.MercadoriaModelReadOnly;
-import br.com.ies.MVC.ExemploMercadoria.MercadoriaController;
+import mvc.exemplomercadoria.MercadoriaModelReadOnly;
+import mvc.exemplomercadoria.MercadoriaController;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;

@@ -1,7 +1,7 @@
-package br.com.ies.MVC;
+package mvc;
 
-import br.com.ies.MVC.ModelReadOnly;
-import br.com.ies.MVC.Controller;
+import mvc.ModelReadOnly;
+import mvc.Controller;
 
 public interface View {
 }

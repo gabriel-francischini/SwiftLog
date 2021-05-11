@@ -1,10 +1,6 @@
-package br.com.ies.MVC.ExemploMercadoria;
+package mvc.exemplomercadoria;
 
-import br.com.ies.MVC.Controller;
-import br.com.ies.padrõesdeprojeto.Observador0;
-import br.com.ies.padrõesdeprojeto.Observável0;
-
-import br.com.ies.MVC.ExemploMercadoria.MercadoriaModel;
+import mvc.Controller;
 
 class MercadoriaModelReadOnly {
     private MercadoriaModel mercadoria;
@@ -14,7 +10,7 @@ class MercadoriaModelReadOnly {
         System.out.println("Criando MercadoriaModelReadOnly(MercadoriaModel)");
         this.mercadoria = mercadoria;
     }
-    public void quandoMudarValores(Observador0 callback){
+    public void quandoMudarValores(padrõesdeprojeto.observador.Listener0Args callback){
         mercadoria.quandoMudarValores(callback);
     }
 

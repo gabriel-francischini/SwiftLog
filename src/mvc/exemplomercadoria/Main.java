@@ -1,16 +1,16 @@
-package br.com.ies.MVC.ExemploMercadoria;
+package mvc.exemplomercadoria;
 
-import br.com.ies.bd.Mercadoria;
+import bd.Mercadoria;
 
-import br.com.ies.MVC.ExemploMercadoria.FormularioMercadoriaView;
-import br.com.ies.MVC.ExemploMercadoria.MercadoriaController;
-import br.com.ies.MVC.ExemploMercadoria.MercadoriaModel;
-import br.com.ies.MVC.ExemploMercadoria.MercadoriaModelReadOnly;
+import mvc.exemplomercadoria.FormularioMercadoriaView;
+import mvc.exemplomercadoria.MercadoriaController;
+import mvc.exemplomercadoria.MercadoriaModel;
+import mvc.exemplomercadoria.MercadoriaModelReadOnly;
 
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Iniciando br.com.ies.MVC.ExemploMercadoria");
+        System.out.println("Iniciando mvc.ExemploMercadoria");
         Mercadoria nova_mercadoria = new Mercadoria();
         MercadoriaController controller = new MercadoriaController(new MercadoriaModel(nova_mercadoria));
         // BUG ! FIXME !

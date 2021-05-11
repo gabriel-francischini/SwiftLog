@@ -18,10 +18,16 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Todas as classes que são persistidas no banco de dados -->
-        <mapping class="br.com.ies.bd.ExemploTabela"/>
-        <mapping class="br.com.ies.bd.Colaborador"/>
-        <mapping class="br.com.ies.bd.Contato"/>
-        <mapping class="br.com.ies.bd.Fornecedor"/>
-        <mapping class="br.com.ies.bd.Mercadoria"/>
+        <mapping class="bd.ExemploTabela"/>
+        <mapping class="bd.Cliente"/>
+        <mapping class="bd.Local"/>
+        <mapping class="bd.ItemVendido"/>
+        <mapping class="bd.ItemEstocado"/>
+        <mapping class="bd.Lote"/>
+        <mapping class="bd.Venda"/>
+        <mapping class="bd.Colaborador"/>
+        <mapping class="bd.Contato"/>
+        <mapping class="bd.Fornecedor"/>
+        <mapping class="bd.Mercadoria"/>
     </session-factory>
 </hibernate-configuration>

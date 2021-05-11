@@ -1,5 +1,6 @@
-package br.com.ies.bd;
+package bd;
 
+import org.hibernate.SQLQuery;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -20,8 +21,7 @@ public class HibernateConfig {
   static {
     try {
       serviceRegistry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
-      configuration = new Configuration();
-      sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+      configuration = new Configuration();      sessionFactory = configuration.buildSessionFactory(serviceRegistry);
     } catch (Exception e) {
       e.printStackTrace();
       throw new ExceptionInInitializerError(e);
@@ -44,6 +44,10 @@ public class HibernateConfig {
     int id = (Integer) getSessão().save(obj);
     transaction.commit();
     return id;
+  }
+
+  public static SQLQuery createSQLQuery(String sql){
+    return getSessão().createSQLQuery(sql);
   }
 
   // veja: https://stackoverflow.com/questions/1262723/using-hibernate-hql-to-truncate-a-table

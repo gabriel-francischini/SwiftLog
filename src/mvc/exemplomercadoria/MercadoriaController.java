@@ -1,14 +1,14 @@
-package br.com.ies.MVC.ExemploMercadoria;
+package mvc.exemplomercadoria;
 
-import br.com.ies.MVC.Model;
-import br.com.ies.MVC.View;
-import br.com.ies.MVC.Controller;
+import mvc.Model;
+import mvc.View;
+import mvc.Controller;
 
-import br.com.ies.bd.Mercadoria;
+import bd.Mercadoria;
 
-import br.com.ies.MVC.ExemploMercadoria.MercadoriaModel;
-import br.com.ies.MVC.ExemploMercadoria.MercadoriaModelReadOnly;
-import br.com.ies.MVC.ExemploMercadoria.FormularioMercadoriaView;
+import mvc.exemplomercadoria.MercadoriaModel;
+import mvc.exemplomercadoria.MercadoriaModelReadOnly;
+import mvc.exemplomercadoria.FormularioMercadoriaView;
 
 
 class MercadoriaController extends Controller {
@@ -45,7 +45,7 @@ class MercadoriaController extends Controller {
         mercadoria.setDescrição(Controller.chave, novaDescrição);
         mercadoria.setTamanho(Controller.chave, novoTamanho);
 
-        br.com.ies.bd.HibernateConfig.salvar(mercadoriaReadOnly.getModel(Controller.chave).getMercadoria(Controller.chave));
+        bd.HibernateConfig.salvar(mercadoriaReadOnly.getModel(Controller.chave).getMercadoria(Controller.chave));
         // Ao salvar, pode ser que uma ID seja adicionada a um item que não fosse pré-existente,
         // logo, devemos avisar os componentes interessados que os valores dessa mercadoria podem ter mudado.
         mercadoriaReadOnly.getModel(Controller.chave).notificarMudouValores();
